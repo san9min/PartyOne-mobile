@@ -19,67 +19,69 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final List<Widget> homeContents = <Widget>[
-    PartyHome(partyCategory: "Hobby"),
+    const PartyHome(),
     const Text("upload"),
-    PartyHome(partyCategory: "Thunder"),
+    const UserWidget(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leadingWidth: 240,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const User(),
-                fullscreenDialog: true,
-              ),
-            );
-          },
-          icon: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(80),
-                child: const SizedBox(
-                  height: 36,
-                  width: 36,
-                  child: Image(
-                    image: AssetImage("assets/images/profile.jpg"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      "박찬혁",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600),
+      appBar: homeIdx == 0
+          ? AppBar(
+              backgroundColor: Colors.white,
+              leadingWidth: 240,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UserScreen(),
+                      fullscreenDialog: true,
                     ),
-                    Text(
-                      "연세대학교",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                    )
+                  );
+                },
+                icon: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(80),
+                      child: const SizedBox(
+                        height: 36,
+                        width: 36,
+                        child: Image(
+                          image: AssetImage("assets/images/profile.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            "박찬혁",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Text(
+                            "연세대학교",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
+            )
+          : null,
       body: homeContents.elementAt(homeIdx),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onClickTab,
@@ -89,16 +91,16 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedItemColor: Colors.black45,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.sports_basketball_rounded),
-            label: '취미',
+            icon: Icon(Icons.home),
+            label: '홈',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_box, size: 32),
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.thunderstorm),
-            label: '번개',
+            icon: Icon(Icons.person),
+            label: '내 정보',
           ),
         ],
       ),
