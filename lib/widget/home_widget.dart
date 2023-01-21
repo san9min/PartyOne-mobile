@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:partyone_mobile/screens/party_detail.dart';
-import 'package:partyone_mobile/widgets/hash_tag.dart';
+import 'package:partyone/screens/party_detail.dart';
+import 'package:partyone/widget/hash_tag.dart';
 
 ///번개 탭 눌렀을 때 나오는 화면
 class PartyHome extends StatefulWidget {
