@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:partyone_mobile/screens/announcement.dart';
-import 'package:partyone_mobile/screens/hobby/hobby_log.dart';
-import 'package:partyone_mobile/screens/member_preview.dart';
+import 'package:partyone/screens/hobby/hobby_log.dart';
+import 'package:partyone/screens/announcement.dart';
+import 'package:partyone/screens/member_preview.dart';
 
 class PartyDetail extends StatefulWidget {
   const PartyDetail({super.key});

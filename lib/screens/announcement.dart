@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:partyone_mobile/models/announcement_data.dart';
-import 'package:partyone_mobile/screens/announcement_detail.dart';
-import 'package:partyone_mobile/screens/create_announcement.dart';
+import 'package:partyone/models/announcement_data.dart';
+import 'package:partyone/screens/announcement_detail.dart';
+import 'package:partyone/screens/create_announcement.dart';
 
 class Announcement extends StatelessWidget {
   const Announcement({super.key});
