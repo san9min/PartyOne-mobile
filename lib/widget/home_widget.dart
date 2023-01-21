@@ -4,19 +4,19 @@ import 'package:partyone/widget/hash_tag.dart';
 
 ///번개 탭 눌렀을 때 나오는 화면
 class PartyHome extends StatefulWidget {
-  final String partyCategory; // 취미, 번개
-  PartyHome({super.key, required this.partyCategory});
+  // final String partyCategory; // 취미, 번개
+  const PartyHome({super.key});
 
-  Map<String, Map<String, dynamic>> categoryVariables = {
-    "Thunder": {
-      "crossAxisCount": 2,
-      "aspectRatio": 2 / 1,
-    },
-    "Hobby": {
-      "crossAxisCount": 1,
-      "aspectRatio": 3 / 1,
-    }
-  };
+  // Map<String, Map<String, dynamic>> categoryVariables = {
+  //   "Thunder": {
+  //     "crossAxisCount": 2,
+  //     "aspectRatio": 2 / 1,
+  //   },
+  //   "Hobby": {
+  //     "crossAxisCount": 1,
+  //     "aspectRatio": 3 / 1,
+  //   }
+  // };
   @override
   State<PartyHome> createState() => _PartyHomeState();
 }
@@ -97,17 +97,17 @@ class _PartyHomeState extends State<PartyHome> {
         floating: true,
       ),
       SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: widget
-              .categoryVariables[widget.partyCategory]!["crossAxisCount"]!,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          //     widget.categoryVariables[widget.partyCategory]!["crossAxisCount"]!,
           mainAxisExtent: 240,
         ),
         delegate: SliverChildBuilderDelegate(
           childCount: data.length,
           (BuildContext context, int index) {
             return PartyCard(
-                aspectRatio: widget
-                    .categoryVariables[widget.partyCategory]!["aspectRatio"],
+                aspectRatio: 2,
+                //widget.categoryVariables[widget.partyCategory]!["aspectRatio"],
                 partyName: data[index]["Name"],
                 partyWhen: data[index]["When"],
                 partyWhere: data[index]["Where"],
