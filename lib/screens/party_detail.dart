@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:partyone/screens/hobby/hobby_log.dart';
 import 'package:partyone/screens/announcement.dart';
 import 'package:partyone/screens/member_preview.dart';
+import 'package:partyone/widget/market_url_share.dart';
 
 class PartyDetail extends StatefulWidget {
   const PartyDetail({super.key});
@@ -35,7 +36,7 @@ class _PartyDetailState extends State<PartyDetail> {
         title: const Text("취미팟 이름"),
         actions: [
           InkWell(
-            onTap: (() => {print('share clicked')}),
+            onTap: (() => {marketUrlShare()}),
             child: const Icon(Icons.share),
           ),
           const SizedBox(
