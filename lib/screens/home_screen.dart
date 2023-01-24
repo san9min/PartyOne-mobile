@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:partyone/screens/user.dart';
+import 'package:partyone/widget/create_party.dart';
 import 'package:partyone/widget/home_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> homeContents = <Widget>[
     const PartyHome(),
-    const Text("upload"),
+    const CreateParty(),
     const UserWidget(),
   ];
 
