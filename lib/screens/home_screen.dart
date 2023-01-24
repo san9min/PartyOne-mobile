@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:partyone/screens/user.dart';
 import 'package:partyone/widget/home_widget.dart';
+import 'package:partyone/widget/share.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,6 +30,18 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: homeIdx == 0
           ? AppBar(
+              actions: [
+                InkWell(
+                  onTap: (() => {marketUrlShare()}),
+                  child: const Icon(
+                    Icons.share,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                )
+              ],
               backgroundColor: Colors.white,
               leadingWidth: 240,
               leading: IconButton(

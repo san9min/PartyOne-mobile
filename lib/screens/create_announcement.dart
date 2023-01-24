@@ -28,6 +28,9 @@ class _CreateAnnouncementState extends State<CreateAnnouncement> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               TextField(
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -101,7 +104,10 @@ void announcementClick(String title, String contents, context) {
             ),
             actions: <Widget>[
               InkWell(
-                child: const Text("확인"),
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const Text("확인"),
+                ),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -137,7 +143,10 @@ void announcementClick(String title, String contents, context) {
             ),
             actions: <Widget>[
               InkWell(
-                child: const Text("확인"),
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const Text("확인"),
+                ),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -150,7 +159,7 @@ void announcementClick(String title, String contents, context) {
     newMap.putIfAbsent('Title', () => title);
     newMap.putIfAbsent('contents', () => contents);
     newMap.putIfAbsent('When', () => '${dt.month}.${dt.day}');
-    print(newMap);
+
     announcementData.insert(0, newMap);
     Navigator.pop(
       context,

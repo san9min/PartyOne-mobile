@@ -153,7 +153,7 @@ class PartyCard extends StatelessWidget {
             children: [
               //사진 이미지
               AspectRatio(
-                aspectRatio: aspectRatio,
+                aspectRatio: 3 / 3,
                 child: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:partyone/screens/hobby/hobby_log.dart';
 import 'package:partyone/screens/announcement.dart';
 import 'package:partyone/screens/member_preview.dart';
+import 'package:partyone/widget/share.dart';
 
 class PartyDetail extends StatefulWidget {
   const PartyDetail({super.key});
@@ -34,9 +35,20 @@ class _PartyDetailState extends State<PartyDetail> {
         centerTitle: true,
         title: const Text("취미팟 이름"),
         actions: [
-          InkWell(
-            onTap: (() => {print('share clicked')}),
-            child: const Icon(Icons.share),
+          Row(
+            children: [
+              InkWell(
+                onTap: (() => shareKakao()),
+                child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFEE500),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: const Icon(Icons.chat_bubble)),
+              ),
+            ],
           ),
           const SizedBox(
             width: 20,
