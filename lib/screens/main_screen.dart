@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   final List<Widget> homeContents = <Widget>[
-    const HomeScreen(),
+    HomeScreen(),
     const SearchScreen(),
     const UploadScreen(),
     const MessageScreen(),

@@ -23,7 +23,7 @@ class _UploadScreenState extends State<UploadScreen> {
               const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Title',
+                  labelText: '퀘스트',
                 ),
               ),
               const SizedBox(

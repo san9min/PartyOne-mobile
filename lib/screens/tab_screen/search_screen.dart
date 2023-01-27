@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:partyone/screens/party_detail.dart';
-import 'package:partyone/widget/hash_tag.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -91,83 +89,17 @@ class _SearchScreenState extends State<SearchScreen> {
           delegate: SliverChildBuilderDelegate(
             childCount: data.length,
             (BuildContext context, int index) {
-              return PartyCard(
-                  //widget.categoryVariables[widget.partyCategory]!["aspectRatio"],
-                  partyName: data[index]["Name"],
-                  partyWhen: data[index]["When"],
-                  partyWhere: data[index]["Where"],
-                  partyImage: data[index]["img"]);
+              return Container();
+              //   return PartyCard(
+              //       //widget.categoryVariables[widget.partyCategory]!["aspectRatio"],
+              //       partyName: data[index]["Name"],
+              //       partyWhen: data[index]["When"],
+              //       partyWhere: data[index]["Where"],
+              //       partyImage: data[index]["img"]);
             },
           ),
         )
       ]),
     );
-  }
-}
-
-//PartyCard 하나
-class PartyCard extends StatelessWidget {
-  final partyName;
-  final partyWhen;
-  final partyWhere;
-  final partyImage;
-
-  const PartyCard(
-      {super.key,
-      required this.partyName,
-      required this.partyWhen,
-      required this.partyWhere,
-      required this.partyImage});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const PartyDetail(),
-              fullscreenDialog: true,
-            ),
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              //사진 이미지
-              AspectRatio(
-                aspectRatio: 2 / 1,
-                child: Container(
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    color: Colors.black54,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Image(
-                    image: AssetImage(partyImage),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Row(
-                children: [
-                  Text(
-                    partyName,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w500),
-                  )
-                ],
-              ),
-              Row(
-                children: const [
-                  HashTag(hashtag: "해시태그 1"),
-                  HashTag(hashtag: "해시태그 2"),
-                  HashTag(hashtag: "해시태그 3")
-                ],
-              )
-            ],
-          ),
-        ));
   }
 }
