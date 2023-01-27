@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CreateParty extends StatefulWidget {
-  const CreateParty({super.key});
+class UploadScreen extends StatefulWidget {
+  const UploadScreen({super.key});
 
   @override
-  State<CreateParty> createState() => _CreatePartyState();
+  State<UploadScreen> createState() => _UploadScreenState();
 }
 
-class _CreatePartyState extends State<CreateParty> {
+class _UploadScreenState extends State<UploadScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("새 파티"),
+      ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(20),
@@ -20,7 +23,7 @@ class _CreatePartyState extends State<CreateParty> {
               const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Title',
+                  labelText: '퀘스트',
                 ),
               ),
               const SizedBox(

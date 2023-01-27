@@ -1,28 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:partyone/widget/hash_tag.dart';
 
-class UserScreen extends StatelessWidget {
-  const UserScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Center(
-              child: Text(
-            "TODO",
-            style: TextStyle(
-              color: Colors.green,
-              fontWeight: FontWeight.w600,
-            ),
-          )),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-        ),
-        body: const UserWidget());
-  }
-}
-
 class UserWidget extends StatelessWidget {
   const UserWidget({
     Key? key,
