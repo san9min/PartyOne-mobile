@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:partyone/screens/announcement.dart';
+import 'package:partyone/screens/member_preview.dart';
+import 'package:partyone/widget/share.dart';
 
 class PartyDetail extends StatelessWidget {
   const PartyDetail({super.key});
@@ -7,6 +10,18 @@ class PartyDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              shareKakao();
+            },
+            icon: const Icon(Icons.share),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.heart_broken),
+          ),
+        ],
         title: const Text('축구'),
       ),
       body: SingleChildScrollView(
@@ -135,7 +150,14 @@ class PartyDetail extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MemberPreview(),
+                        ),
+                      );
+                    },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -151,7 +173,12 @@ class PartyDetail extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Announcement()));
+              },
               child: Container(
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.fromLTRB(20, 20, 5, 20),
