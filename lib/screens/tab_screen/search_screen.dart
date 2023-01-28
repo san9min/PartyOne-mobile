@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:partyone/widget/party_card.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -9,42 +10,12 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final List<Map> data = [
-    {
-      "Where": "신촌",
-      "When": "10.27",
-      "Name": "축구",
-      "img": "assets/images/soccer.jpg"
-    },
-    {
-      "Where": "연희동",
-      "When": "01.17",
-      "Name": "밥먹을 사람~",
-      "img": "assets/images/food.jpg"
-    },
-    {
-      "Where": "강남",
-      "When": "09.15",
-      "Name": "코딩",
-      "img": "assets/images/food.jpg"
-    },
-    {
-      "Where": "강남",
-      "When": "09.15",
-      "Name": "코딩",
-      "img": "assets/images/food.jpg"
-    },
-    {
-      "Where": "강남",
-      "When": "09.15",
-      "Name": "코딩",
-      "img": "assets/images/food.jpg"
-    },
-    {
-      "Where": "강남",
-      "When": "09.15",
-      "Name": "코딩",
-      "img": "assets/images/food.jpg"
-    },
+    {"Where": "신촌", "When": "10.27", "Name": "축구", "img": "soccer.jpg"},
+    {"Where": "연희동", "When": "01.17", "Name": "밥먹을 사람~", "img": "food.jpg"},
+    {"Where": "강남", "When": "09.15", "Name": "코딩", "img": "food.jpg"},
+    {"Where": "강남", "When": "09.15", "Name": "코딩", "img": "food.jpg"},
+    {"Where": "강남", "When": "09.15", "Name": "코딩", "img": "food.jpg"},
+    {"Where": "강남", "When": "09.15", "Name": "코딩", "img": "food.jpg"},
   ];
 
   @override
@@ -84,18 +55,17 @@ class _SearchScreenState extends State<SearchScreen> {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             //     widget.categoryVariables[widget.partyCategory]!["crossAxisCount"]!,
-            mainAxisExtent: 240,
+            mainAxisExtent: 256,
           ),
           delegate: SliverChildBuilderDelegate(
             childCount: data.length,
             (BuildContext context, int index) {
-              return Container();
-              //   return PartyCard(
-              //       //widget.categoryVariables[widget.partyCategory]!["aspectRatio"],
-              //       partyName: data[index]["Name"],
-              //       partyWhen: data[index]["When"],
-              //       partyWhere: data[index]["Where"],
-              //       partyImage: data[index]["img"]);
+              return PartyCard(
+                  //widget.categoryVariables[widget.partyCategory]!["aspectRatio"],
+                  partyName: data[index]["Name"],
+                  partyWhen: data[index]["When"],
+                  partyWhere: data[index]["Where"],
+                  partyImage: data[index]["img"]);
             },
           ),
         )

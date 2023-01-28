@@ -40,70 +40,99 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
         backgroundColor: Colors.white,
-        // leadingWidth: 240,
-        // leading: IconButton(
-        //   onPressed: () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(
-        //         builder: (context) => const UserScreen(),
-        //         fullscreenDialog: true,
-        //       ),
-        //     );
-        //   },
-        //   icon: Row(
-        //     children: [
-        //       ClipRRect(
-        //         borderRadius: BorderRadius.circular(80),
-        //         child: const SizedBox(
-        //           height: 36,
-        //           width: 36,
-        //           child: Image(
-        //             image: AssetImage("assets/images/profile.jpg"),
-        //             fit: BoxFit.cover,
-        //           ),
-        //         ),
-        //       ),
-        //       Padding(
-        //         padding: const EdgeInsets.only(left: 8.0),
-        //         child: Column(
-        //           crossAxisAlignment: CrossAxisAlignment.start,
-        //           mainAxisAlignment: MainAxisAlignment.center,
-        //           children: const [
-        //             Text(
-        //               "박찬혁",
-        //               style: TextStyle(
-        //                   fontSize: 16,
-        //                   color: Colors.black,
-        //                   fontWeight: FontWeight.w600),
-        //             ),
-        //             Text(
-        //               "연세대학교",
-        //               style: TextStyle(
-        //                   fontSize: 12,
-        //                   color: Colors.black,
-        //                   fontWeight: FontWeight.w500),
-        //             )
-        //           ],
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ),
-      body: FutureBuilder(
-        future: myparties,
-        builder: (context, snapshot) {
-          print("snapshot: $snapshot");
-
-          if (snapshot.hasData) {
-            print("snapshot has Data");
-            return makePartyList(snapshot);
-          }
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        },
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            /* 
+            My Party
+            */
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "내 파티",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                  ),
+                ),
+                SizedBox(
+                  height: 280,
+                  child: FutureBuilder(
+                    future: myparties,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return makePartyList(snapshot);
+                      }
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+            /* 
+            Invited Party
+            */
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "초대받은 파티",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                  ),
+                ),
+                SizedBox(
+                  height: 280,
+                  child: FutureBuilder(
+                    future: myparties,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return makePartyList(snapshot);
+                      }
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+            /* 
+            Freinds Party
+            */
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "친구 파티",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                  ),
+                ),
+                SizedBox(
+                  height: 280,
+                  child: FutureBuilder(
+                    future: myparties,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return makePartyList(snapshot);
+                      }
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
