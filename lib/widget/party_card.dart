@@ -58,6 +58,15 @@ class PartyCard extends StatelessWidget {
               ),
               Row(
                 children: const [
+                  Icon(
+                    Icons.people,
+                    size: 12,
+                  ),
+                  Text(" 4/6"),
+                ],
+              ),
+              Row(
+                children: const [
                   HashTag(hashtag: "해시태그 1"),
                   HashTag(hashtag: "해시태그 2"),
                   HashTag(hashtag: "해시태그 3")

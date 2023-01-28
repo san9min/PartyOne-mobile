@@ -3,7 +3,6 @@ import 'package:partyone/models/party_model.dart';
 import 'package:partyone/widget/party_card.dart';
 
 // party card들을 보는 리스트
-//AsyncSnapshot<List<PartyModel>>
 ListView makePartyList(AsyncSnapshot<List<PartyModel>> snapshot) {
   return ListView.separated(
       padding: const EdgeInsets.symmetric(
@@ -14,13 +13,13 @@ ListView makePartyList(AsyncSnapshot<List<PartyModel>> snapshot) {
       itemBuilder: (context, index) {
 //사용자가 보는 아이템만 빌드-> 메모리 최적화됨
         var party = snapshot.data![index];
-        print("makelist에서 party variables : $party");
+
         return PartyCard(
             partyName: party.partyName,
             partyWhen: party.partyWhen,
             partyWhere: party.partyWhere,
             partyImage: party.thumb);
       },
-      separatorBuilder: ((context, index) => const SizedBox(width: 20)),
+      separatorBuilder: ((context, index) => const SizedBox(width: 16)),
       itemCount: snapshot.data!.length);
 }

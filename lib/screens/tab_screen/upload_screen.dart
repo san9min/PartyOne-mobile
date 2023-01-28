@@ -12,7 +12,11 @@ class _UploadScreenState extends State<UploadScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("새 파티"),
+        title: const Text(
+          "파티 만들기",
+          style: TextStyle(color: Colors.blue),
+        ),
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -20,6 +24,18 @@ class _UploadScreenState extends State<UploadScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Container(
+                  height: 140,
+                  color: Colors.grey.withOpacity(0.2),
+                  child: GestureDetector(
+                      onTap: () {
+                        _showBottomSheet();
+                      },
+                      child: const Center(
+                        child: Icon(
+                          Icons.add_a_photo,
+                        ),
+                      ))),
               const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -56,6 +72,37 @@ class _UploadScreenState extends State<UploadScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  _showBottomSheet() {
+    return showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(12),
+        ),
+      ),
+      builder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                '앨범에서 사진 선택',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        );
+      },
     );
   }
 }

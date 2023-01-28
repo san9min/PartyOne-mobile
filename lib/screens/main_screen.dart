@@ -5,6 +5,7 @@ import 'package:partyone/screens/tab_screen/search_screen.dart';
 import 'package:partyone/screens/tab_screen/upload_screen.dart';
 import 'package:partyone/screens/tab_screen/user_screen.dart';
 
+// 바텀 내비게이션바가 있는 뼈대 스크린
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -42,23 +43,23 @@ class _MainScreenState extends State<MainScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '홈',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
+            label: '파티 찾기',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_box, size: 32),
-            label: "",
+            label: "파티 만들기",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.messenger_rounded),
-            label: "Message",
+            label: "메세지",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: '내 정보',
           ),
         ],
       ),
